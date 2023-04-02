@@ -16,7 +16,7 @@ function formatDate(timestamp) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturday"
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
@@ -33,7 +33,7 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
 
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector(".weather-forecast");
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
@@ -113,5 +113,7 @@ function handleSubmit(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let celsiusTemperature = 0;
 
 search("Chicago");
